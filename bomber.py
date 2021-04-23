@@ -347,7 +347,7 @@ ALL_COLORS = [Fore.GREEN, Fore.RED, Fore.YELLOW, Fore.BLUE,
               Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
 RESET_ALL = Style.RESET_ALL
 
-description = """ BomberMan Diya Manuser Hoga mairo
+description = """TBomb - Your Friendly Spammer Application
 
 Moja Korar Jonno Banaichi Karo Hoga Marte Na😤 -
 \t Exposing the vulnerable APIs over Internet
