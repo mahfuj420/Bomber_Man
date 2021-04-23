@@ -58,7 +58,12 @@ def bann_text():
 /_____/\____/_/ /_/ /_/_____/_/_/ /_/\__, /  N.A.M Mahfuj 
                                     /____/   
                                          """
-   
+     version = "Version: "+__VERSION__
+    contributors = "Contributors: "+" ".join(__CONTRIBUTORS__)
+    print(random.choice(ALL_COLORS) + logo + RESET_ALL)
+    mesgdcrt.SuccessMessage(version)
+    mesgdcrt.SectionMessage(contributors)
+    print()  
 
 def check_intr():
     try:
@@ -324,7 +329,7 @@ def selectnode(mode="sms"):
 
 mesgdcrt = MessageDecorator("icon")
 if sys.version_info[0] != 3:
-    mesgdcrt.FailureMessage("TBomb will work only in Python v3")
+    mesgdcrt.FailureMessage("BomberMan will work only in Python v3")
     sys.exit()
 
 try:
@@ -334,7 +339,7 @@ except FileNotFoundError:
 
 
 __VERSION__ = get_version()
-__CONTRIBUTORS__ = ['SpeedX', 't0xic0der', 'scpketer', 'Stefan']
+__CONTRIBUTORS__ = ['Kingz', 'Tor Abbu', 'N.A.M', 'Mahfuj']
 
 ALL_COLORS = [Fore.GREEN, Fore.RED, Fore.YELLOW, Fore.BLUE,
               Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
@@ -351,15 +356,19 @@ TBomb is not intented for malicious uses.
 """
 
 parser = argparse.ArgumentParser(description=description,
-                                 epilog='Coded by SpeedX !!!')
+                                 epilog='Coded by N.A.M Mahfuj !!!')
 parser.add_argument("-sms", "--sms", action="store_true",
-                    help="start SMS Bomb mode")
+                    help="start  SMS Bomb mode")
 parser.add_argument("-call", "--call", action="store_true",
                     help="start  CALL Bomb mode")
+parser.add_argument("-mail", "--mail", action="store_true",
+                    help="start  MAIL Bomb mode")
+parser.add_argument("-u", "--update", action="store_true",
+                    help="update BomberMan")
 parser.add_argument("-c", "--contributors", action="store_true",
                     help="show current TBomb contributors")
 parser.add_argument("-v", "--version", action="store_true",
-                    help="show current TBomb version")
+                    help="show current BomberMan version")
 
 
 if __name__ == "__main__":
@@ -368,10 +377,22 @@ if __name__ == "__main__":
         print("Version: ", __VERSION__)
     elif args.contributors:
         print("Contributors: ", " ".join(__CONTRIBUTORS__))
+    elif args.update:
+        update()
+    elif args.mail:
+        selectnode(mode="mail")
+    elif args.call:
+        selectnode(mode="call")
+    elif args.sms:
+        selectnode(mode="sms")
+    else:
+        choice = ""
+        avail_choice = {"1": "SMS", "2": "CALL",
+                        "3": "MAIL (Not Yet Available)"}
         try:
             while (choice not in avail_choice):
                 clr()
-                bann_tex()
+                bann_text()
                 print("Available Options:\n")
                 for key, value in avail_choice.items():
                     print("[ {key} ] {value} BOMB".format(key=key,
