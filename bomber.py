@@ -58,13 +58,7 @@ def bann_text():
 /_____/\____/_/ /_/ /_/_____/_/_/ /_/\__, /  N.A.M Mahfuj 
                                     /____/   
                                          """
-    version = "Version: "+__VERSION__
-    contributors = "Contributors: "+" ".join(__CONTRIBUTORS__)
-    print(random.choice(ALL_COLORS) + logo + RESET_ALL)
-    mesgdcrt.SuccessMessage(version)
-    mesgdcrt.SectionMessage(contributors)
-    print()
-
+   
 
 def check_intr():
     try:
