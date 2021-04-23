@@ -368,13 +368,10 @@ if __name__ == "__main__":
         print("Version: ", __VERSION__)
     elif args.contributors:
         print("Contributors: ", " ".join(__CONTRIBUTORS__))
-         choice = ""
-        avail_choice = {"1": "SMS", "2": "CALL",
-                        "3": "MAIL (Not Yet Available)"}
         try:
             while (choice not in avail_choice):
                 clr()
-                bann_text()
+                bann_tex()
                 print("Available Options:\n")
                 for key, value in avail_choice.items():
                     print("[ {key} ] {value} BOMB".format(key=key,
