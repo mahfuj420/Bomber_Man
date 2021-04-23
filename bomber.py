@@ -51,7 +51,7 @@ def clr():
 def bann_text():
     clr()
     logo = """
-       ____                  ____  _            
+    ____                  ____  _            
    / __ )____  ____ ___  / __ )(_)___  ____ _
   / __  / __ \/ __ `__ \/ __  / / __ \/ __ `/
  / /_/ / /_/ / / / / / / /_/ / / / / / /_/ / Created By
@@ -87,13 +87,13 @@ def do_zip_update():
     # Unzip and overwrite the current folder
 
     if success:
-        mesgdcrt.SuccessMessage("TBomb was updated to the latest version")
+        mesgdcrt.SuccessMessage("BlmberMan was updated to the latest version")
         mesgdcrt.GeneralMessage(
             "Please run the script again to load the latest version")
     else:
-        mesgdcrt.FailureMessage("Unable to update TBomb.")
+        mesgdcrt.FailureMessage("Unable to update BomberMan.")
         mesgdcrt.WarningMessage(
-            "Grab The Latest one From https://github.com/TheSpeedX/TBomb.git")
+            "Grab The Latest one From https://github.com/mahfuj420/Bomber_Man.git")
 
     sys.exit()
 
@@ -118,16 +118,16 @@ def do_git_update():
     print("\n")
 
     if success:
-        mesgdcrt.SuccessMessage("TBomb was updated to the latest version")
+        mesgdcrt.SuccessMessage("BomberMan was updated to the latest version")
         mesgdcrt.GeneralMessage(
             "Please run the script again to load the latest version")
     else:
-        mesgdcrt.FailureMessage("Unable to update TBomb.")
+        mesgdcrt.FailureMessage("Unable to update BomberMan.")
         mesgdcrt.WarningMessage("Make Sure To Install 'git' ")
         mesgdcrt.GeneralMessage("Then run command:")
         print(
             "git checkout . && "
-            "git pull https://github.com/TheSpeedX/TBomb.git HEAD")
+            "git pull https://github.com/mahfuj420/Bomber_Man.git HEAD")
     sys.exit()
 
 
@@ -141,21 +141,21 @@ def update():
 def check_for_updates():
     mesgdcrt.SectionMessage("Checking for updates")
     fver = requests.get(
-            "https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.version"
+            "https://raw.githubusercontent.com/mahfuj420/Bomber_Man/master/.version"
             ).text.strip()
     if fver != __VERSION__:
         mesgdcrt.WarningMessage("An update is available")
         mesgdcrt.GeneralMessage("Starting update...")
         update()
     else:
-        mesgdcrt.SuccessMessage("TBomb is up-to-date")
-        mesgdcrt.GeneralMessage("Starting TBomb")
+        mesgdcrt.SuccessMessage("BomberMan is up-to-date")
+        mesgdcrt.GeneralMessage("Starting BomberMan")
 
 
 def notifyen():
     try:
         noti = requests.get(
-            "https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.notify"
+            "https://raw.githubusercontent.com/mahfuj420/Bomber_Man/master/.notify"
             ).text.upper()
         if len(noti) > 10:
             mesgdcrt.SectionMessage("NOTIFICATION: " + noti)
@@ -209,7 +209,7 @@ def pretty_print(cc, target, success, failed):
     mesgdcrt.GeneralMessage("Failed       : " + str(failed))
     mesgdcrt.WarningMessage(
         "This tool was made for fun and research purposes only")
-    mesgdcrt.SuccessMessage("TBomb was created by SpeedX")
+    mesgdcrt.SuccessMessage("BomberMan was created by N.A.M Mahfuj")
 
 
 def workernode(mode, cc, target, count, delay, max_threads):
@@ -359,13 +359,9 @@ TBomb is not intented for malicious uses.
 parser = argparse.ArgumentParser(description=description,
                                  epilog='Coded by SpeedX !!!')
 parser.add_argument("-sms", "--sms", action="store_true",
-                    help="start TBomb with SMS Bomb mode")
+                    help="start SMS Bomb mode")
 parser.add_argument("-call", "--call", action="store_true",
-                    help="start TBomb with CALL Bomb mode")
-parser.add_argument("-mail", "--mail", action="store_true",
-                    help="start TBomb with MAIL Bomb mode")
-parser.add_argument("-u", "--update", action="store_true",
-                    help="update TBomb")
+                    help="start  CALL Bomb mode")
 parser.add_argument("-c", "--contributors", action="store_true",
                     help="show current TBomb contributors")
 parser.add_argument("-v", "--version", action="store_true",
